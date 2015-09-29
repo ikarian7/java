@@ -1,4 +1,4 @@
-package inleidingjava;
+package inleidingjava.hoofdstuk6;
 
 import java.awt.*;
 import java.applet.*;

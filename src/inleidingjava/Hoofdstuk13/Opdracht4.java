@@ -7,9 +7,10 @@ import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Opdracht3 extends Applet {
+public class Opdracht4 extends Applet {
 	
 private Button bakstenenknop;
+private Button betonblokkenknop;
 int breedtesteen;
 int hoogtesteen;
 private int nAantalSteenHor;
@@ -23,6 +24,10 @@ public void init(){
 	bakstenenknop = new Button("Bakstenen");
 	bakstenenknop.addActionListener(new BaksteenLuisteraar());
 	add(bakstenenknop);
+	
+	betonblokkenknop = new Button("Betonblokken");
+	betonblokkenknop.addActionListener(new BetonblokLuisteraar());
+	add(betonblokkenknop);
 	
 	tekenmuur = false;
 	voegKleur = Color.BLACK;
@@ -55,6 +60,18 @@ class BaksteenLuisteraar implements ActionListener{
 		nAantalSteenHor = 25;
 		nAantalSteenver = 20;
 		steenkleur = Color.RED;
+		tekenmuur = true;
+		repaint();
+	}
+	
+}
+class BetonblokLuisteraar implements ActionListener{
+	public void actionPerformed(ActionEvent e) {
+		breedtesteen = 60;
+		hoogtesteen = 50;
+		nAantalSteenHor = 15;
+		nAantalSteenver = 10;
+		steenkleur = Color.GRAY;
 		tekenmuur = true;
 		repaint();
 	}
